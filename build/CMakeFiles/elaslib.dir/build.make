@@ -75,9 +75,32 @@ CMakeFiles/elaslib.dir/src/matrix.cpp.o.provides: CMakeFiles/elaslib.dir/src/mat
 
 CMakeFiles/elaslib.dir/src/matrix.cpp.o.provides.build: CMakeFiles/elaslib.dir/src/matrix.cpp.o
 
+CMakeFiles/elaslib.dir/src/main_opencv.cpp.o: CMakeFiles/elaslib.dir/flags.make
+CMakeFiles/elaslib.dir/src/main_opencv.cpp.o: ../src/main_opencv.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/elaslib.dir/src/main_opencv.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/elaslib.dir/src/main_opencv.cpp.o -c "/home/hyj/opencv project/stereo_elas/src/main_opencv.cpp"
+
+CMakeFiles/elaslib.dir/src/main_opencv.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/elaslib.dir/src/main_opencv.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/hyj/opencv project/stereo_elas/src/main_opencv.cpp" > CMakeFiles/elaslib.dir/src/main_opencv.cpp.i
+
+CMakeFiles/elaslib.dir/src/main_opencv.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/elaslib.dir/src/main_opencv.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/hyj/opencv project/stereo_elas/src/main_opencv.cpp" -o CMakeFiles/elaslib.dir/src/main_opencv.cpp.s
+
+CMakeFiles/elaslib.dir/src/main_opencv.cpp.o.requires:
+.PHONY : CMakeFiles/elaslib.dir/src/main_opencv.cpp.o.requires
+
+CMakeFiles/elaslib.dir/src/main_opencv.cpp.o.provides: CMakeFiles/elaslib.dir/src/main_opencv.cpp.o.requires
+	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/main_opencv.cpp.o.provides.build
+.PHONY : CMakeFiles/elaslib.dir/src/main_opencv.cpp.o.provides
+
+CMakeFiles/elaslib.dir/src/main_opencv.cpp.o.provides.build: CMakeFiles/elaslib.dir/src/main_opencv.cpp.o
+
 CMakeFiles/elaslib.dir/src/filter.cpp.o: CMakeFiles/elaslib.dir/flags.make
 CMakeFiles/elaslib.dir/src/filter.cpp.o: ../src/filter.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/elaslib.dir/src/filter.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/elaslib.dir/src/filter.cpp.o -c "/home/hyj/opencv project/stereo_elas/src/filter.cpp"
 
@@ -98,9 +121,32 @@ CMakeFiles/elaslib.dir/src/filter.cpp.o.provides: CMakeFiles/elaslib.dir/src/fil
 
 CMakeFiles/elaslib.dir/src/filter.cpp.o.provides.build: CMakeFiles/elaslib.dir/src/filter.cpp.o
 
+CMakeFiles/elaslib.dir/src/slamviewer.cpp.o: CMakeFiles/elaslib.dir/flags.make
+CMakeFiles/elaslib.dir/src/slamviewer.cpp.o: ../src/slamviewer.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/elaslib.dir/src/slamviewer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/elaslib.dir/src/slamviewer.cpp.o -c "/home/hyj/opencv project/stereo_elas/src/slamviewer.cpp"
+
+CMakeFiles/elaslib.dir/src/slamviewer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/elaslib.dir/src/slamviewer.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/hyj/opencv project/stereo_elas/src/slamviewer.cpp" > CMakeFiles/elaslib.dir/src/slamviewer.cpp.i
+
+CMakeFiles/elaslib.dir/src/slamviewer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/elaslib.dir/src/slamviewer.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/hyj/opencv project/stereo_elas/src/slamviewer.cpp" -o CMakeFiles/elaslib.dir/src/slamviewer.cpp.s
+
+CMakeFiles/elaslib.dir/src/slamviewer.cpp.o.requires:
+.PHONY : CMakeFiles/elaslib.dir/src/slamviewer.cpp.o.requires
+
+CMakeFiles/elaslib.dir/src/slamviewer.cpp.o.provides: CMakeFiles/elaslib.dir/src/slamviewer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/slamviewer.cpp.o.provides.build
+.PHONY : CMakeFiles/elaslib.dir/src/slamviewer.cpp.o.provides
+
+CMakeFiles/elaslib.dir/src/slamviewer.cpp.o.provides.build: CMakeFiles/elaslib.dir/src/slamviewer.cpp.o
+
 CMakeFiles/elaslib.dir/src/elas.cpp.o: CMakeFiles/elaslib.dir/flags.make
 CMakeFiles/elaslib.dir/src/elas.cpp.o: ../src/elas.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/elaslib.dir/src/elas.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/elaslib.dir/src/elas.cpp.o -c "/home/hyj/opencv project/stereo_elas/src/elas.cpp"
 
@@ -123,7 +169,7 @@ CMakeFiles/elaslib.dir/src/elas.cpp.o.provides.build: CMakeFiles/elaslib.dir/src
 
 CMakeFiles/elaslib.dir/src/triangle.cpp.o: CMakeFiles/elaslib.dir/flags.make
 CMakeFiles/elaslib.dir/src/triangle.cpp.o: ../src/triangle.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/elaslib.dir/src/triangle.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/elaslib.dir/src/triangle.cpp.o -c "/home/hyj/opencv project/stereo_elas/src/triangle.cpp"
 
@@ -146,7 +192,7 @@ CMakeFiles/elaslib.dir/src/triangle.cpp.o.provides.build: CMakeFiles/elaslib.dir
 
 CMakeFiles/elaslib.dir/src/main.cpp.o: CMakeFiles/elaslib.dir/flags.make
 CMakeFiles/elaslib.dir/src/main.cpp.o: ../src/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/elaslib.dir/src/main.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/elaslib.dir/src/main.cpp.o -c "/home/hyj/opencv project/stereo_elas/src/main.cpp"
 
@@ -169,7 +215,7 @@ CMakeFiles/elaslib.dir/src/main.cpp.o.provides.build: CMakeFiles/elaslib.dir/src
 
 CMakeFiles/elaslib.dir/src/descriptor.cpp.o: CMakeFiles/elaslib.dir/flags.make
 CMakeFiles/elaslib.dir/src/descriptor.cpp.o: ../src/descriptor.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/elaslib.dir/src/descriptor.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/elaslib.dir/src/descriptor.cpp.o -c "/home/hyj/opencv project/stereo_elas/src/descriptor.cpp"
 
@@ -193,7 +239,9 @@ CMakeFiles/elaslib.dir/src/descriptor.cpp.o.provides.build: CMakeFiles/elaslib.d
 # Object files for target elaslib
 elaslib_OBJECTS = \
 "CMakeFiles/elaslib.dir/src/matrix.cpp.o" \
+"CMakeFiles/elaslib.dir/src/main_opencv.cpp.o" \
 "CMakeFiles/elaslib.dir/src/filter.cpp.o" \
+"CMakeFiles/elaslib.dir/src/slamviewer.cpp.o" \
 "CMakeFiles/elaslib.dir/src/elas.cpp.o" \
 "CMakeFiles/elaslib.dir/src/triangle.cpp.o" \
 "CMakeFiles/elaslib.dir/src/main.cpp.o" \
@@ -203,7 +251,9 @@ elaslib_OBJECTS = \
 elaslib_EXTERNAL_OBJECTS =
 
 ../lib/libelaslib.a: CMakeFiles/elaslib.dir/src/matrix.cpp.o
+../lib/libelaslib.a: CMakeFiles/elaslib.dir/src/main_opencv.cpp.o
 ../lib/libelaslib.a: CMakeFiles/elaslib.dir/src/filter.cpp.o
+../lib/libelaslib.a: CMakeFiles/elaslib.dir/src/slamviewer.cpp.o
 ../lib/libelaslib.a: CMakeFiles/elaslib.dir/src/elas.cpp.o
 ../lib/libelaslib.a: CMakeFiles/elaslib.dir/src/triangle.cpp.o
 ../lib/libelaslib.a: CMakeFiles/elaslib.dir/src/main.cpp.o
@@ -219,7 +269,9 @@ CMakeFiles/elaslib.dir/build: ../lib/libelaslib.a
 .PHONY : CMakeFiles/elaslib.dir/build
 
 CMakeFiles/elaslib.dir/requires: CMakeFiles/elaslib.dir/src/matrix.cpp.o.requires
+CMakeFiles/elaslib.dir/requires: CMakeFiles/elaslib.dir/src/main_opencv.cpp.o.requires
 CMakeFiles/elaslib.dir/requires: CMakeFiles/elaslib.dir/src/filter.cpp.o.requires
+CMakeFiles/elaslib.dir/requires: CMakeFiles/elaslib.dir/src/slamviewer.cpp.o.requires
 CMakeFiles/elaslib.dir/requires: CMakeFiles/elaslib.dir/src/elas.cpp.o.requires
 CMakeFiles/elaslib.dir/requires: CMakeFiles/elaslib.dir/src/triangle.cpp.o.requires
 CMakeFiles/elaslib.dir/requires: CMakeFiles/elaslib.dir/src/main.cpp.o.requires

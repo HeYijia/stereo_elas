@@ -244,12 +244,18 @@ protected:
 
     int minDisparity;
     int disparityRange;
+
+private:
+    cv::Mat left_dmap_;
+
 public:
     Elas elas;
     StereoEfficientLargeScale(int mindis, int dispRange);
     void operator()(cv::Mat& leftim, cv::Mat& rightim, cv::Mat& leftdisp, cv::Mat& rightdisp, int border);
     void operator()(cv::Mat& leftim, cv::Mat& rightim, cv::Mat& leftdisp, int border);
-//	void StereoEfficientLargeScale::check(Mat& leftim, Mat& rightim, Mat& disp, StereoEval& eval);
+
+    cv::Mat GetDenseMap(){return left_dmap_.clone(); }
+//	void check(Mat& leftim, Mat& rightim, Mat& disp, StereoEval& eval);
 };
 
 #endif

@@ -72,7 +72,7 @@ all: CMakeFiles/elas.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/elas.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" 7
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/elas.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" 0
 .PHONY : CMakeFiles/elas.dir/rule
@@ -91,13 +91,48 @@ clean: CMakeFiles/elas.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/elas_opencv.dir
+
+# All Build rule for target.
+CMakeFiles/elas_opencv.dir/all: CMakeFiles/elaslib.dir/all
+	$(MAKE) -f CMakeFiles/elas_opencv.dir/build.make CMakeFiles/elas_opencv.dir/depend
+	$(MAKE) -f CMakeFiles/elas_opencv.dir/build.make CMakeFiles/elas_opencv.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles"  2
+	@echo "Built target elas_opencv"
+.PHONY : CMakeFiles/elas_opencv.dir/all
+
+# Include target in all.
+all: CMakeFiles/elas_opencv.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/elas_opencv.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" 9
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/elas_opencv.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" 0
+.PHONY : CMakeFiles/elas_opencv.dir/rule
+
+# Convenience name for target.
+elas_opencv: CMakeFiles/elas_opencv.dir/rule
+.PHONY : elas_opencv
+
+# clean rule for target.
+CMakeFiles/elas_opencv.dir/clean:
+	$(MAKE) -f CMakeFiles/elas_opencv.dir/build.make CMakeFiles/elas_opencv.dir/clean
+.PHONY : CMakeFiles/elas_opencv.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/elas_opencv.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/elaslib.dir
 
 # All Build rule for target.
 CMakeFiles/elaslib.dir/all:
 	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/depend
 	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles"  2 3 4 5 6 7
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles"  3 4 5 6 7 8 9 10
 	@echo "Built target elaslib"
 .PHONY : CMakeFiles/elaslib.dir/all
 
@@ -107,7 +142,7 @@ all: CMakeFiles/elaslib.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/elaslib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" 6
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/elaslib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" 0
 .PHONY : CMakeFiles/elaslib.dir/rule

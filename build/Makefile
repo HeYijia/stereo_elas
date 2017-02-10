@@ -115,6 +115,19 @@ elas/fast:
 .PHONY : elas/fast
 
 #=============================================================================
+# Target rules for targets named elas_opencv
+
+# Build rule for target.
+elas_opencv: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 elas_opencv
+.PHONY : elas_opencv
+
+# fast build rule for target.
+elas_opencv/fast:
+	$(MAKE) -f CMakeFiles/elas_opencv.dir/build.make CMakeFiles/elas_opencv.dir/build
+.PHONY : elas_opencv/fast
+
+#=============================================================================
 # Target rules for targets named elaslib
 
 # Build rule for target.
@@ -156,7 +169,6 @@ src/elas.o: src/elas.cpp.o
 
 # target to build an object file
 src/elas.cpp.o:
-	$(MAKE) -f CMakeFiles/elas.dir/build.make CMakeFiles/elas.dir/src/elas.cpp.o
 	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/elas.cpp.o
 .PHONY : src/elas.cpp.o
 
@@ -165,7 +177,6 @@ src/elas.i: src/elas.cpp.i
 
 # target to preprocess a source file
 src/elas.cpp.i:
-	$(MAKE) -f CMakeFiles/elas.dir/build.make CMakeFiles/elas.dir/src/elas.cpp.i
 	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/elas.cpp.i
 .PHONY : src/elas.cpp.i
 
@@ -174,7 +185,6 @@ src/elas.s: src/elas.cpp.s
 
 # target to generate assembly for a file
 src/elas.cpp.s:
-	$(MAKE) -f CMakeFiles/elas.dir/build.make CMakeFiles/elas.dir/src/elas.cpp.s
 	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/elas.cpp.s
 .PHONY : src/elas.cpp.s
 
@@ -207,6 +217,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/elas.dir/build.make CMakeFiles/elas.dir/src/main.cpp.o
 	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
@@ -215,6 +226,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/elas.dir/build.make CMakeFiles/elas.dir/src/main.cpp.i
 	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
@@ -223,8 +235,36 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/elas.dir/build.make CMakeFiles/elas.dir/src/main.cpp.s
 	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/main_opencv.o: src/main_opencv.cpp.o
+.PHONY : src/main_opencv.o
+
+# target to build an object file
+src/main_opencv.cpp.o:
+	$(MAKE) -f CMakeFiles/elas_opencv.dir/build.make CMakeFiles/elas_opencv.dir/src/main_opencv.cpp.o
+	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/main_opencv.cpp.o
+.PHONY : src/main_opencv.cpp.o
+
+src/main_opencv.i: src/main_opencv.cpp.i
+.PHONY : src/main_opencv.i
+
+# target to preprocess a source file
+src/main_opencv.cpp.i:
+	$(MAKE) -f CMakeFiles/elas_opencv.dir/build.make CMakeFiles/elas_opencv.dir/src/main_opencv.cpp.i
+	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/main_opencv.cpp.i
+.PHONY : src/main_opencv.cpp.i
+
+src/main_opencv.s: src/main_opencv.cpp.s
+.PHONY : src/main_opencv.s
+
+# target to generate assembly for a file
+src/main_opencv.cpp.s:
+	$(MAKE) -f CMakeFiles/elas_opencv.dir/build.make CMakeFiles/elas_opencv.dir/src/main_opencv.cpp.s
+	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/main_opencv.cpp.s
+.PHONY : src/main_opencv.cpp.s
 
 src/matrix.o: src/matrix.cpp.o
 .PHONY : src/matrix.o
@@ -249,6 +289,30 @@ src/matrix.s: src/matrix.cpp.s
 src/matrix.cpp.s:
 	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/matrix.cpp.s
 .PHONY : src/matrix.cpp.s
+
+src/slamviewer.o: src/slamviewer.cpp.o
+.PHONY : src/slamviewer.o
+
+# target to build an object file
+src/slamviewer.cpp.o:
+	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/slamviewer.cpp.o
+.PHONY : src/slamviewer.cpp.o
+
+src/slamviewer.i: src/slamviewer.cpp.i
+.PHONY : src/slamviewer.i
+
+# target to preprocess a source file
+src/slamviewer.cpp.i:
+	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/slamviewer.cpp.i
+.PHONY : src/slamviewer.cpp.i
+
+src/slamviewer.s: src/slamviewer.cpp.s
+.PHONY : src/slamviewer.s
+
+# target to generate assembly for a file
+src/slamviewer.cpp.s:
+	$(MAKE) -f CMakeFiles/elaslib.dir/build.make CMakeFiles/elaslib.dir/src/slamviewer.cpp.s
+.PHONY : src/slamviewer.cpp.s
 
 src/triangle.o: src/triangle.cpp.o
 .PHONY : src/triangle.o
@@ -282,6 +346,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... elas"
+	@echo "... elas_opencv"
 	@echo "... elaslib"
 	@echo "... rebuild_cache"
 	@echo "... src/descriptor.o"
@@ -296,9 +361,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/main_opencv.o"
+	@echo "... src/main_opencv.i"
+	@echo "... src/main_opencv.s"
 	@echo "... src/matrix.o"
 	@echo "... src/matrix.i"
 	@echo "... src/matrix.s"
+	@echo "... src/slamviewer.o"
+	@echo "... src/slamviewer.i"
+	@echo "... src/slamviewer.s"
 	@echo "... src/triangle.o"
 	@echo "... src/triangle.i"
 	@echo "... src/triangle.s"

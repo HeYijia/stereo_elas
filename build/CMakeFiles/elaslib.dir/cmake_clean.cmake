@@ -1,6 +1,8 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/elaslib.dir/src/matrix.cpp.o"
+  "CMakeFiles/elaslib.dir/src/main_opencv.cpp.o"
   "CMakeFiles/elaslib.dir/src/filter.cpp.o"
+  "CMakeFiles/elaslib.dir/src/slamviewer.cpp.o"
   "CMakeFiles/elaslib.dir/src/elas.cpp.o"
   "CMakeFiles/elaslib.dir/src/triangle.cpp.o"
   "CMakeFiles/elaslib.dir/src/main.cpp.o"

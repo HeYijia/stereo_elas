@@ -6,34 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/hyj/opencv project/stereo_elas/src/descriptor.h
-iostream
--
-stdio.h
--
-string.h
--
-stdlib.h
--
-math.h
--
-stdint.h
--
-
-/home/hyj/opencv project/stereo_elas/src/elas.cpp
-elas.h
-/home/hyj/opencv project/stereo_elas/src/elas.h
-algorithm
--
-math.h
--
-descriptor.h
-/home/hyj/opencv project/stereo_elas/src/descriptor.h
-triangle.h
-/home/hyj/opencv project/stereo_elas/src/triangle.h
-matrix.h
-/home/hyj/opencv project/stereo_elas/src/matrix.h
-
 /home/hyj/opencv project/stereo_elas/src/elas.h
 iostream
 -
@@ -47,24 +19,30 @@ vector
 -
 emmintrin.h
 -
+opencv2/opencv.hpp
+-
 stdint.h
 -
 timer.h
 /home/hyj/opencv project/stereo_elas/src/timer.h
 
-/home/hyj/opencv project/stereo_elas/src/matrix.h
-stdio.h
+/home/hyj/opencv project/stereo_elas/src/image.h
+cstdlib
 -
-string.h
+climits
 -
-stdlib.h
+cstring
 -
+fstream
+-
+
+/home/hyj/opencv project/stereo_elas/src/main.cpp
 iostream
 -
-vector
--
-stdint.h
--
+elas.h
+/home/hyj/opencv project/stereo_elas/src/elas.h
+image.h
+/home/hyj/opencv project/stereo_elas/src/image.h
 
 /home/hyj/opencv project/stereo_elas/src/timer.h
 iostream
@@ -85,6 +63,4 @@ sys/time.h
 -
 stdint.h
 -
-
-/home/hyj/opencv project/stereo_elas/src/triangle.h
 

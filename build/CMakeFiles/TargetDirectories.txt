@@ -1,2 +1,3 @@
 /home/hyj/opencv project/stereo_elas/build/CMakeFiles/elas.dir
+/home/hyj/opencv project/stereo_elas/build/CMakeFiles/elas_opencv.dir
 /home/hyj/opencv project/stereo_elas/build/CMakeFiles/elaslib.dir

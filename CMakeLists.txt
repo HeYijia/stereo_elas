@@ -7,6 +7,8 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set (LIBELAS_SRC_DIR src)
 
+ADD_DEFINITIONS(-std=c++11 -fPIC -DENABLE_SSE -D__DEBUG -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2)
+
 # use opencv to read and show img
 find_package(OpenCV 2.4 REQUIRED)
 # use Pangoliin to show 3d points

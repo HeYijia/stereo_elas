@@ -1593,6 +1593,9 @@ void StereoEfficientLargeScale::operator()(cv::Mat& leftim, cv::Mat& rightim, cv
     Mat disp;
     Mat(leftdpf(cv::Rect(bd,0,leftim.cols,leftim.rows))).copyTo(disp);
     disp.convertTo(leftdisp,CV_16S,16);
+
+    left_dmap_ = leftdisp.clone();
+
     Mat(rightdpf(cv::Rect(bd,0,leftim.cols,leftim.rows))).copyTo(disp);
 
     disp.convertTo(rightdisp,CV_16S,16);

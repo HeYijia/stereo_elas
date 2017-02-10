@@ -1,0 +1,52 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hyj/opencv project/stereo_elas/src/elas.h
+iostream
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+vector
+-
+emmintrin.h
+-
+opencv2/opencv.hpp
+-
+stdint.h
+-
+timer.h
+/home/hyj/opencv project/stereo_elas/src/timer.h
+
+/home/hyj/opencv project/stereo_elas/src/main_opencv.cpp
+elas.h
+/home/hyj/opencv project/stereo_elas/src/elas.h
+
+/home/hyj/opencv project/stereo_elas/src/timer.h
+iostream
+-
+iomanip
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+vector
+-
+string
+-
+sys/time.h
+-
+stdint.h
+-
+

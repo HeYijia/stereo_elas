@@ -52,48 +52,102 @@ include CMakeFiles/elas.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/elas.dir/flags.make
 
-CMakeFiles/elas.dir/src/elas.cpp.o: CMakeFiles/elas.dir/flags.make
-CMakeFiles/elas.dir/src/elas.cpp.o: ../src/elas.cpp
+CMakeFiles/elas.dir/src/main.cpp.o: CMakeFiles/elas.dir/flags.make
+CMakeFiles/elas.dir/src/main.cpp.o: ../src/main.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report "/home/hyj/opencv project/stereo_elas/build/CMakeFiles" $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/elas.dir/src/elas.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/elas.dir/src/elas.cpp.o -c "/home/hyj/opencv project/stereo_elas/src/elas.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/elas.dir/src/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/elas.dir/src/main.cpp.o -c "/home/hyj/opencv project/stereo_elas/src/main.cpp"
 
-CMakeFiles/elas.dir/src/elas.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/elas.dir/src/elas.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/hyj/opencv project/stereo_elas/src/elas.cpp" > CMakeFiles/elas.dir/src/elas.cpp.i
+CMakeFiles/elas.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/elas.dir/src/main.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/hyj/opencv project/stereo_elas/src/main.cpp" > CMakeFiles/elas.dir/src/main.cpp.i
 
-CMakeFiles/elas.dir/src/elas.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/elas.dir/src/elas.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/hyj/opencv project/stereo_elas/src/elas.cpp" -o CMakeFiles/elas.dir/src/elas.cpp.s
+CMakeFiles/elas.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/elas.dir/src/main.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/hyj/opencv project/stereo_elas/src/main.cpp" -o CMakeFiles/elas.dir/src/main.cpp.s
 
-CMakeFiles/elas.dir/src/elas.cpp.o.requires:
-.PHONY : CMakeFiles/elas.dir/src/elas.cpp.o.requires
+CMakeFiles/elas.dir/src/main.cpp.o.requires:
+.PHONY : CMakeFiles/elas.dir/src/main.cpp.o.requires
 
-CMakeFiles/elas.dir/src/elas.cpp.o.provides: CMakeFiles/elas.dir/src/elas.cpp.o.requires
-	$(MAKE) -f CMakeFiles/elas.dir/build.make CMakeFiles/elas.dir/src/elas.cpp.o.provides.build
-.PHONY : CMakeFiles/elas.dir/src/elas.cpp.o.provides
+CMakeFiles/elas.dir/src/main.cpp.o.provides: CMakeFiles/elas.dir/src/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/elas.dir/build.make CMakeFiles/elas.dir/src/main.cpp.o.provides.build
+.PHONY : CMakeFiles/elas.dir/src/main.cpp.o.provides
 
-CMakeFiles/elas.dir/src/elas.cpp.o.provides.build: CMakeFiles/elas.dir/src/elas.cpp.o
+CMakeFiles/elas.dir/src/main.cpp.o.provides.build: CMakeFiles/elas.dir/src/main.cpp.o
 
 # Object files for target elas
 elas_OBJECTS = \
-"CMakeFiles/elas.dir/src/elas.cpp.o"
+"CMakeFiles/elas.dir/src/main.cpp.o"
 
 # External object files for target elas
 elas_EXTERNAL_OBJECTS =
 
-elas: CMakeFiles/elas.dir/src/elas.cpp.o
-elas: CMakeFiles/elas.dir/build.make
-elas: ../lib/libelaslib.a
-elas: CMakeFiles/elas.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable elas"
+../bin/elas: CMakeFiles/elas.dir/src/main.cpp.o
+../bin/elas: CMakeFiles/elas.dir/build.make
+../bin/elas: ../lib/libelaslib.a
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_ts.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_nonfree.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
+../bin/elas: /home/hyj/ORB_SLAM/Pangolin/build/src/libpangolin.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_nonfree.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
+../bin/elas: /usr/lib/x86_64-linux-gnu/libGLU.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libGL.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libSM.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libICE.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libX11.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libXext.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libGLEW.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libdc1394.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libavcodec.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libavformat.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libavutil.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libswscale.so
+../bin/elas: /usr/lib/libOpenNI.so
+../bin/elas: /usr/lib/libOpenNI2.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libpng.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libz.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libjpeg.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libtiff.so
+../bin/elas: /usr/lib/x86_64-linux-gnu/libIlmImf.so
+../bin/elas: CMakeFiles/elas.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/elas"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/elas.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/elas.dir/build: elas
+CMakeFiles/elas.dir/build: ../bin/elas
 .PHONY : CMakeFiles/elas.dir/build
 
-CMakeFiles/elas.dir/requires: CMakeFiles/elas.dir/src/elas.cpp.o.requires
+CMakeFiles/elas.dir/requires: CMakeFiles/elas.dir/src/main.cpp.o.requires
 .PHONY : CMakeFiles/elas.dir/requires
 
 CMakeFiles/elas.dir/clean:

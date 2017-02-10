@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/elas.dir/src/elas.cpp.o"
-  "elas.pdb"
-  "elas"
+  "CMakeFiles/elas.dir/src/main.cpp.o"
+  "../bin/elas.pdb"
+  "../bin/elas"
 )
 
 # Per-language clean rules from dependency scanning.
