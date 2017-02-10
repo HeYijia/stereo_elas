@@ -1,0 +1,90 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hyj/opencv project/stereo_elas/src/descriptor.h
+iostream
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+math.h
+-
+stdint.h
+-
+
+/home/hyj/opencv project/stereo_elas/src/elas.cpp
+elas.h
+/home/hyj/opencv project/stereo_elas/src/elas.h
+algorithm
+-
+math.h
+-
+descriptor.h
+/home/hyj/opencv project/stereo_elas/src/descriptor.h
+triangle.h
+/home/hyj/opencv project/stereo_elas/src/triangle.h
+matrix.h
+/home/hyj/opencv project/stereo_elas/src/matrix.h
+
+/home/hyj/opencv project/stereo_elas/src/elas.h
+iostream
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+vector
+-
+emmintrin.h
+-
+stdint.h
+-
+timer.h
+/home/hyj/opencv project/stereo_elas/src/timer.h
+
+/home/hyj/opencv project/stereo_elas/src/matrix.h
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+iostream
+-
+vector
+-
+stdint.h
+-
+
+/home/hyj/opencv project/stereo_elas/src/timer.h
+iostream
+-
+iomanip
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+vector
+-
+string
+-
+sys/time.h
+-
+stdint.h
+-
+
+/home/hyj/opencv project/stereo_elas/src/triangle.h
+

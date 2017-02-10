@@ -1,0 +1,1 @@
+/usr/bin/c++   -msse3 -g    CMakeFiles/elas.dir/src/elas.cpp.o  -o elas -rdynamic ../lib/libelaslib.a 
