@@ -31,6 +31,9 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 #include <vector>
 #include <emmintrin.h>
 
+#include <opencv2/opencv.hpp>
+using namespace cv;
+
 // define fixed-width datatypes for Visual Studio projects
 #ifndef _MSC_VER
   #include <stdint.h>
@@ -146,6 +149,7 @@ public:
 
   // constructor, input: parameters  
   Elas (parameters param) : param(param) {}
+  Elas () :param(ROBOTICS){}
 
   // deconstructor
   ~Elas () {}
@@ -160,6 +164,9 @@ public:
   //               if subsampling is not active their size is width x height,
   //               otherwise width/2 x height/2 (rounded towards zero)
   void process (uint8_t* I1,uint8_t* I2,float* D1,float* D2,const int32_t* dims);
+
+  // parameter set
+  parameters param;
   
 private:
   
@@ -220,9 +227,6 @@ private:
   void adaptiveMean (float* D);
   void median (float* D);
   
-  // parameter set
-  parameters param;
-  
   // memory aligned input images + dimensions
   uint8_t *I1,*I2;
   int32_t width,height,bpl;
@@ -231,6 +235,21 @@ private:
 #ifdef PROFILE
   Timer timer;
 #endif
+};
+
+class StereoEfficientLargeScale
+{
+protected:
+    //Elas::parameters param(Elas::MIDDLEBURY);
+
+    int minDisparity;
+    int disparityRange;
+public:
+    Elas elas;
+    StereoEfficientLargeScale(int mindis, int dispRange);
+    void operator()(cv::Mat& leftim, cv::Mat& rightim, cv::Mat& leftdisp, cv::Mat& rightdisp, int border);
+    void operator()(cv::Mat& leftim, cv::Mat& rightim, cv::Mat& leftdisp, int border);
+//	void StereoEfficientLargeScale::check(Mat& leftim, Mat& rightim, Mat& disp, StereoEval& eval);
 };
 
 #endif

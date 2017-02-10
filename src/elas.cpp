@@ -1561,3 +1561,73 @@ void Elas::median (float* D) {
   free(D_temp);
   free(vals);
 }
+
+StereoEfficientLargeScale::StereoEfficientLargeScale(int mindis, int dispRange):elas()
+{
+    minDisparity = mindis;
+    disparityRange = dispRange;
+    elas.param.disp_min=mindis;
+    elas.param.disp_max=mindis+dispRange;
+
+    elas.param.postprocess_only_left = false;
+}
+void StereoEfficientLargeScale::operator()(cv::Mat& leftim, cv::Mat& rightim, cv::Mat& leftdisp, cv::Mat& rightdisp, int bd)
+{
+    Mat l,r;
+    if(leftim.channels()==3){cvtColor(leftim,l,CV_BGR2GRAY);cout<<"convert gray"<<endl;}
+    else l=leftim;
+    if(rightim.channels()==3)cvtColor(rightim,r,CV_BGR2GRAY);
+    else r=rightim;
+
+    Mat lb,rb;
+    cv::copyMakeBorder(l,lb,0,0,bd,bd,cv::BORDER_REPLICATE);
+    cv::copyMakeBorder(r,rb,0,0,bd,bd,cv::BORDER_REPLICATE);
+
+    const cv::Size imsize = lb.size();
+    const int32_t dims[3] = {imsize.width,imsize.height,imsize.width}; // bytes per line = width
+
+    cv::Mat leftdpf = cv::Mat::zeros(imsize,CV_32F);
+    cv::Mat rightdpf = cv::Mat::zeros(imsize,CV_32F);
+    elas.process(lb.data,rb.data,leftdpf.ptr<float>(0),rightdpf.ptr<float>(0),dims);
+
+    Mat disp;
+    Mat(leftdpf(cv::Rect(bd,0,leftim.cols,leftim.rows))).copyTo(disp);
+    disp.convertTo(leftdisp,CV_16S,16);
+    Mat(rightdpf(cv::Rect(bd,0,leftim.cols,leftim.rows))).copyTo(disp);
+
+    disp.convertTo(rightdisp,CV_16S,16);
+}
+
+void StereoEfficientLargeScale::operator()(cv::Mat& leftim, cv::Mat& rightim, cv::Mat& leftdisp, int bd)
+{
+    Mat temp;
+    StereoEfficientLargeScale::operator()(leftim,rightim,leftdisp,temp,bd);
+}
+/*
+void StereoEfficientLargeScale::check(Mat& leftim, Mat& rightim, Mat& disp, StereoEval& eval)
+{
+    string wname = "ELAS";
+    namedWindow(wname);
+    int nsigma = 0;
+    createTrackbar("N sigma",wname,&nsigma,1000);
+    int key = 0;
+    Mat disp16;
+    Mat dispr16;
+    Mat lim,rim;
+    Stat st;
+    while(key!='q')
+    {
+        addNoise(leftim,lim,nsigma/10.0);
+        addNoise(rightim,rim,nsigma/10.0);
+
+        operator()(lim,rim,disp16,dispr16,16);
+        Mat disp8;
+        disp16.convertTo(disp8,CV_8U,2/16.0);
+        eval(disp8,1.0,true);
+        st.push_back(eval.all);
+        st.show();
+        imshow(wname,disp);
+        if(key=='r')st.clear();
+        key = waitKey(1);
+    }
+}*/
