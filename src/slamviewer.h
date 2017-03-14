@@ -18,6 +18,8 @@ public:
   void run();
   bool CheckFinish();
   void SetFinish();
+  void Finished();
+  bool IsFinished();
   void DrawCurrentCamera(pangolin::OpenGlMatrix &Twc);
   void DrawPoints();
   void DrawSparsePoints();
@@ -30,6 +32,7 @@ private:
   int _drawedframeID=0;
 
   bool mbFinished;
+  bool mbSetFinished;
   std::mutex mMutexFinish;
 
   float mKeyFrameSize;

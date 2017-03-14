@@ -4,13 +4,24 @@ namespace Stereo_Viewer {
 bool Viewer::CheckFinish()
 {
     std::unique_lock<std::mutex> lock(mMutexFinish);
-    return mbFinished;
+    return mbSetFinished;
 }
 
 void Viewer::SetFinish()
 {
     std::unique_lock<std::mutex> lock(mMutexFinish);
+    mbSetFinished = true;
+}
+
+void Viewer::Finished()
+{
+    std::unique_lock<std::mutex> lock(mMutexFinish);
     mbFinished = true;
+}
+
+bool Viewer::IsFinished()
+{
+    return mbFinished;
 }
 
 Viewer::Viewer(StereoEfficientLargeScale *stereo):
@@ -129,6 +140,7 @@ void Viewer::DrawPoints()
     glBegin(GL_POINTS);
 
    cv::Mat map = stereo_->GetDenseMap();
+   cv::Mat gray = stereo_->GetImg();
    double min,max;
    cv::minMaxLoc(map,&min,&max);
 
@@ -138,16 +150,16 @@ void Viewer::DrawPoints()
    float cy = 183.11040 ;
    if( !map.empty())
    {
-       for(size_t v = 2; v< map.rows -2; v += 2)
-         for(size_t u = 2; u< map.cols -2 ; u+=2)
+       for(size_t v = 2; v< map.rows -2; v += 1)
+         for(size_t u = 2; u< map.cols -2 ; u+=1)
        {
            if(map.at<short>(v, u) > 0)
            {
                float z =379.8145 / map.at<short>(v,u);
 
-               cv::Vec3b color = makeDepthColor(1/z);
-
-               glColor3f(color(0)/255. , color(1)/255., color(2)/255. );
+               //cv::Vec3b color = makeDepthColor(1/z);
+               //glColor3f(color(0)/255. , color(1)/255., color(2)/255. );
+               glColor3f(gray.at< uchar >(v,u)/255. , gray.at< uchar >(v,u)/255.,gray.at< uchar >(v,u)/255.);
 
               // float z =379.8145 / map.at<short>(v,u);
                float x = z * (u-cx )/ fx;
@@ -169,7 +181,8 @@ void Viewer::run()
 {
 
   mbFinished = false;
-  pangolin::CreateWindowAndBind("MapViewer: trajactory viewer",1024,768);
+  mbSetFinished = false;
+  pangolin::CreateWindowAndBind("MapViewer: depth map viewer",1024,768);
 
   glEnable(GL_DEPTH_TEST);
   glEnable(GL_BLEND);
@@ -183,7 +196,7 @@ void Viewer::run()
   pangolin::Var<bool> menuClose("menu.Close",false,false);
 
 
-  std::string ss = "PaoPaoRobot";
+  std::string ss = "Robot";
   pangolin::GlText txt = pangolin::GlFont::I().Text(ss.c_str());
 
   // Define Camera Render Object (for view / scene browsing)
@@ -248,7 +261,7 @@ void Viewer::run()
     }
     if(menuShowSparsePoints)
     {
-      DrawSparsePoints();
+      //DrawSparsePoints();
     }
 
     pangolin::FinishFrame();
@@ -259,7 +272,10 @@ void Viewer::run()
     }
   }
 
-  pangolin::BindToContext("MapViewer: trajactory viewer");
+  Finished();
+  //pangolin::Quit();
+
+  //pangolin::BindToContext("MapViewer: trajactory viewer");
 
 }
 

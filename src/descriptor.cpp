@@ -26,7 +26,7 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 using namespace std;
 
 Descriptor::Descriptor(uint8_t* I,int32_t width,int32_t height,int32_t bpl,bool half_resolution) {
-  I_desc        = (uint8_t*)_mm_malloc(16*width*height*sizeof(uint8_t),16);
+  I_desc        = (uint8_t*)_mm_malloc(16*width*height*sizeof(uint8_t),16);   // every descriptor is 16 byte
   uint8_t* I_du = (uint8_t*)_mm_malloc(bpl*height*sizeof(uint8_t),16);
   uint8_t* I_dv = (uint8_t*)_mm_malloc(bpl*height*sizeof(uint8_t),16);
   filter::sobel3x3(I,I_du,I_dv,bpl,height);
@@ -48,6 +48,16 @@ void Descriptor::createDescriptor (uint8_t* I_du,uint8_t* I_dv,int32_t width,int
   if (half_resolution) {
   
     // create filter strip
+
+    /*
+     *            |  |  |*|  |  |                addr_v0
+     *            |*|  |*|  |*|                addr_v1
+     *            |  |*|*|*|  |                addr_v2
+     *            |*|  |*|  |*|                addr_v3
+     *            |  |  |*|  |  |                addr_v4
+     *
+     *            I_desc_curr:  point to I_desc, save du or dv of  * pixel
+     */
     for (int32_t v=4; v<height-3; v+=2) {
 
       addr_v2 = v*bpl;

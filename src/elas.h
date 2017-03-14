@@ -48,6 +48,8 @@ using namespace cv;
   typedef unsigned __int64  uint64_t;
 #endif
 
+//#define PROFILE 1
+
 #ifdef PROFILE
 #include "timer.h"
 #endif
@@ -102,7 +104,7 @@ public:
         incon_threshold       = 5;
         incon_min_support     = 5;
         add_corners           = 0;
-        grid_size             = 20;
+        grid_size             = 20;         // 20
         beta                  = 0.02;
         gamma                 = 3;
         sigma                 = 1;
@@ -141,7 +143,7 @@ public:
         ipol_gap_width        = 5000;
         filter_median         = 1;
         filter_adaptive_mean  = 0;
-        postprocess_only_left = 0;
+        postprocess_only_left = 0;  // 0
         subsampling           = 0;
       }
     }
@@ -164,6 +166,7 @@ public:
   //               if subsampling is not active their size is width x height,
   //               otherwise width/2 x height/2 (rounded towards zero)
   void process (uint8_t* I1,uint8_t* I2,float* D1,float* D2,const int32_t* dims);
+  void process (uint8_t* I1_,uint8_t* I2_,float* D1,float* D2,const int32_t* dims, cv::Mat grad);
 
   // parameter set
   parameters param;
@@ -213,8 +216,16 @@ private:
   inline void findMatch (int32_t &u,int32_t &v,float &plane_a,float &plane_b,float &plane_c,
                          int32_t* disparity_grid,int32_t *grid_dims,uint8_t* I1_desc,uint8_t* I2_desc,
                          int32_t *P,int32_t &plane_radius,bool &valid,bool &right_image,float* D);
+
+  inline void findMatch(int32_t &u,int32_t &v,float &plane_a,float &plane_b,float &plane_c,
+                              int32_t* disparity_grid,int32_t *grid_dims,uint8_t* I1_desc,uint8_t* I2_desc,
+                              int32_t *P,int32_t &plane_radius,bool &valid,bool &right_image,float* D, cv::Mat grad);
+
   void computeDisparity (std::vector<support_pt> p_support,std::vector<triangle> tri,int32_t* disparity_grid,int32_t* grid_dims,
                          uint8_t* I1_desc,uint8_t* I2_desc,bool right_image,float* D);
+
+  void computeDisparity(vector<support_pt> p_support,vector<triangle> tri,int32_t* disparity_grid,int32_t *grid_dims,
+                              uint8_t* I1_desc,uint8_t* I2_desc,bool right_image,float* D , cv::Mat grad);
 
   // L/R consistency check
   void leftRightConsistencyCheck (float* D1,float* D2);
@@ -247,6 +258,7 @@ protected:
 
 private:
     cv::Mat left_dmap_;
+    cv::Mat left_img_;
 
 public:
     Elas elas;
@@ -254,7 +266,11 @@ public:
     void operator()(cv::Mat& leftim, cv::Mat& rightim, cv::Mat& leftdisp, cv::Mat& rightdisp, int border);
     void operator()(cv::Mat& leftim, cv::Mat& rightim, cv::Mat& leftdisp, int border);
 
+    void operator()(cv::Mat& leftim, cv::Mat& rightim, cv::Mat& leftdisp, int border, const cv::Mat grad);
+    void operator()(cv::Mat& leftim, cv::Mat& rightim, cv::Mat& leftdisp, cv::Mat& rightdisp, int border,const cv::Mat grad);
+
     cv::Mat GetDenseMap(){return left_dmap_.clone(); }
+    cv::Mat GetImg(){return left_img_.clone(); }
 //	void check(Mat& leftim, Mat& rightim, Mat& disp, StereoEval& eval);
 };
 

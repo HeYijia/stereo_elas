@@ -373,7 +373,7 @@ namespace filter {
       using namespace std;
       assert( w % 16 == 0 && "width must be multiple of 16!" );
       const int w_chunk  = w/16;
-      __m128i* 	i0       = (__m128i*)( in );
+      __m128i* 	i0       = (__m128i*)( in );                                    //  __m128i是128＝16*8位，一次加载16个字节
       __m128i* 	i1       = (__m128i*)( in ) + w_chunk*1;
       __m128i* 	i2       = (__m128i*)( in ) + w_chunk*2;
       __m128i* result_h  = (__m128i*)( out_h ) + 2*w_chunk;
